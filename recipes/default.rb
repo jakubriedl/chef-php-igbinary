@@ -13,7 +13,7 @@ bash 'make & install igbinary' do
   EOF
 end
 
-node['php-igbinary']['conf_dirs'].each do |conf_dir|
+node['php']['conf_dirs'].each do |conf_dir|
 	template "#{conf_dir}/#{node['php-igbinary']['conf_file']}" do
 		source "igbinary.ini.erb"
 		owner "root"
